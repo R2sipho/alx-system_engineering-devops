@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# This script demonstrates trapping the SIGTERM signal
+
+# Define a trap to handle the SIGTERM signal
+trap "echo I am invincible!!!" SIGTERM
+
+# Infinite loop to display a message and sleep for 2 seconds
+while true; do
+    echo To infinity and beyond
+    sleep 2
+done
+
