@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Script to display all IPv4 IPs on a machine
+
+if [ -f /proc/net/if_inet6 ]; then
+    # Use awk to filter out IPv6 addresses
+    awk '!/fe80/{gsub(/\/.*$/, "", $1); print $1}' /proc/net/if_inet6
+else
+    echo "Error: Unable to determine IP addresses."
+    exit 1
+fi
+
