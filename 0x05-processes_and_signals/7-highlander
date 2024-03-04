@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
+#Write a Bash script that displays: To infinity and beyond indefinitely
+#With a sleep 2 in between each iteration and I am invincible!!! when receiving a SIGTERM signal
 
-# This script demonstrates trapping the SIGTERM signal
+msg()
+{
+    echo "I am invincible!!!"
+}
+trap "msg" SIGTERM
 
-# Define a trap to handle the SIGTERM signal
-trap "echo I am invincible!!!" SIGTERM
-
-# Infinite loop to display a message and sleep for 2 seconds
-while true; do
-    echo To infinity and beyond
-    sleep 2
+while true
+do
+	echo "To infinity and beyond"
+	sleep 2
 done
-

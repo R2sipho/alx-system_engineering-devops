@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-
-ps -e --forest --format "user pid %cpu %mem vsz rss tty stat start time command" | head -50
+#display all runnning processes
+ps -auxf
 
